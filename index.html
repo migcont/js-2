@@ -1,0 +1,85 @@
+<!-- //tijera gana a papel
+//papel gana a piedra
+//piedra gana a tijera -->
+
+
+<script type="text/javascript">
+
+  var veces = parseInt(prompt("Ingrese cuandas veces quiere jugar contra la computadora: "));
+  var seleccion = parseInt(prompt("Seleccione un valor [piedra = 0 || tijera = 1 || papel = 2 ]: "));
+  var piedra = 0;
+  var tijera = 1;
+  var papel = 2;
+  var pc = 0;
+  var us = 0;
+  var ep = 0;
+
+    for (i=0; i<veces; i++){
+    const mov = Math.floor(Math.random()*3);
+    if (seleccion == 0){
+       switch (mov) {
+       case 0: document.write("piedra empata piedra --> NADIE GANA <br/>");
+       var ep = parseInt(ep + 1);
+       break;
+       case 1: document.write ("Piedra gana tijera --> GANA PC <br/>");
+       var pc = parseInt(pc + 1);
+       break;
+       case 2: document.write("piedra pierde papel --> GANA USUARIO <br/>");
+       var us = parseInt(us + 1);
+       break;
+       default:
+     }
+   }
+   if (seleccion == 1){
+      switch (mov) {
+      case 0: document.write(i + "Tijera pierde piedra --> GANA PC<br/>");
+      break;
+      case 1: document.write (i + "Tijera empata tijera --> NADIE GANA<br/>");
+      break;
+      case 2: document.write(i + "Tijera gana papel --> GANA USUARIO<br/>");
+      break;
+      default:
+    }
+  }
+  if (seleccion == 2){
+     switch (mov) {
+     case 0: document.write("papel gana piedra <br/>");
+     break;
+     case 1: document.write ("Papel pierde tijera <br/>");
+     break;
+     case 2: document.write("papel empata papel <br/>");
+     break;
+     default:
+   }
+ }
+}
+
+if(pc < us){
+  document.write("Usuarios gana: " + us) + "veces";
+  document.write("PC ganas: " + pc) + "veces";
+  document.write("empatan:" + ep);
+}
+if (pc > us){
+    document.write("PC ganas: " + pc) + "veces";
+}
+if (pc == us){
+  document.write("empatan:" + ep);
+}
+
+  //   if(tiro == piedra && seleccion == piedra){
+  //
+  //     document.write("<h2>Soy Piedra</h2>");
+  //     document.write("<h2>valor ramdom: </h2>" + tiro);
+  //
+  //   }else if (tiro == tijera ) {
+  //
+  //     document.write("<h2>Soy tijera</h2>");
+  //     document.write("<h2>valor ramdom: </h2>" + tiro);
+  //
+  //   }else (tiro == papel && seleccion == papel)
+  //   document.write("<h2>Soy papel</h2>");
+  //   document.write("<h2>valor ramdom: </h2>" + tiro);
+  // }
+
+
+</script>
