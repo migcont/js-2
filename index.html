@@ -18,13 +18,13 @@
     const mov = Math.floor(Math.random()*3);
     if (seleccion == 0){
        switch (mov) {
-       case 0: document.write("piedra empata piedra --> NADIE GANA <br/>");
+       case 0:
        var ep = parseInt(ep + 1);
        break;
-       case 1: document.write ("Piedra gana tijera --> GANA PC <br/>");
+       case 1:
        var pc = parseInt(pc + 1);
        break;
-       case 2: document.write("piedra pierde papel --> GANA USUARIO <br/>");
+       case 2:
        var us = parseInt(us + 1);
        break;
        default:
@@ -32,22 +32,28 @@
    }
    if (seleccion == 1){
       switch (mov) {
-      case 0: document.write(i + "Tijera pierde piedra --> GANA PC<br/>");
+      case 0:
+      var pc = parseInt(pc + 1);
       break;
-      case 1: document.write (i + "Tijera empata tijera --> NADIE GANA<br/>");
+      case 1:
+      var ep = parseInt(ep + 1);
       break;
-      case 2: document.write(i + "Tijera gana papel --> GANA USUARIO<br/>");
+      case 2:
+      var us = parseInt(us + 1);
       break;
       default:
     }
   }
   if (seleccion == 2){
      switch (mov) {
-     case 0: document.write("papel gana piedra <br/>");
+     case 0:
+     var us = parseInt(us + 1);
      break;
-     case 1: document.write ("Papel pierde tijera <br/>");
+     case 1:
+     var pc = parseInt(pc + 1);
      break;
-     case 2: document.write("papel empata papel <br/>");
+     case 2: 
+     var ep = parseInt(ep + 1);
      break;
      default:
    }
@@ -55,31 +61,23 @@
 }
 
 if(pc < us){
-  document.write("Usuarios gana: " + us) + "veces";
-  document.write("PC ganas: " + pc) + "veces";
-  document.write("empatan:" + ep);
+  document.write("USUARIO --> FELICITACIONES GANANASTE: " + us + " veces <br/>");
+  document.write("pc      --> " + pc);
+  document.write("<br/>");
+  document.write("empates --> " + ep);
 }
 if (pc > us){
-    document.write("PC ganas: " + pc) + "veces";
+    document.write("USUARIO --> PERDISTE GANA PC: " + pc + " veces <br/>");
+    document.write("usuario --> " + us);
+    document.write("<br/>");
+    document.write("empates --> " + ep);
 }
-if (pc == us){
-  document.write("empatan:" + ep);
+if (ep == us && ep == pc){
+  document.write("NADIE GANA:" + ep);
+  document.write("usuario  --> " + us);
+  document.write("<br/>");
+  document.write("pc       --> " + pc);
 }
-
-  //   if(tiro == piedra && seleccion == piedra){
-  //
-  //     document.write("<h2>Soy Piedra</h2>");
-  //     document.write("<h2>valor ramdom: </h2>" + tiro);
-  //
-  //   }else if (tiro == tijera ) {
-  //
-  //     document.write("<h2>Soy tijera</h2>");
-  //     document.write("<h2>valor ramdom: </h2>" + tiro);
-  //
-  //   }else (tiro == papel && seleccion == papel)
-  //   document.write("<h2>Soy papel</h2>");
-  //   document.write("<h2>valor ramdom: </h2>" + tiro);
-  // }
 
 
 </script>
